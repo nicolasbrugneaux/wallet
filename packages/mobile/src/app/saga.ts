@@ -45,6 +45,7 @@ import { FETCH_TIMEOUT_DURATION } from 'src/config'
 import { SuperchargeTokenConfig } from 'src/consumerIncentives/types'
 import { handleDappkitDeepLink } from 'src/dappkit/dappkit'
 import { appVersionDeprecationChannel, fetchRemoteConfigValues } from 'src/firebase/firebase'
+import { PaymentDeepLinkHandler } from 'src/firebase/remoteConfigValuesDefaults'
 import { receiveAttestationMessage } from 'src/identity/actions'
 import { CodeInputType } from 'src/identity/verification'
 import { navigate } from 'src/navigator/NavigationService'
@@ -186,6 +187,7 @@ export interface RemoteConfigValues {
   biometryEnabled: boolean
   superchargeButtonType: SuperchargeButtonType
   maxNumRecentDapps: number
+  paymentDeepLinkHandler: PaymentDeepLinkHandler
 }
 
 export function* appRemoteFeatureFlagSaga() {
